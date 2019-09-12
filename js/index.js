@@ -21,3 +21,12 @@ function showRepositories() {
     .join('')}</ul>`;
   document.getElementById('repositories').innerHTML = repoList;
 }
+
+function getCommits(repo) {
+  const owner = repo.dataset.username;
+  const name = repo.dataset.repository;
+  const req = new XMLHttpRequest();
+  req.addEventListener('load', showCommits);
+  req.open('GET', 'https://api.github.com/repos/octocat/' + name + '/commits');
+  req.send();
+}
