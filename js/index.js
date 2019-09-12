@@ -6,7 +6,7 @@ function getRepositories() {
 }
 
 function showRepositories() {
-  const repos = JSON.parse(this.responseText);
+  let repos = JSON.parse(this.responseText);
   console.log(repos);
   const repoList = `<ul>${repos
     .map(
