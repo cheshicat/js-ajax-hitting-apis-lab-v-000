@@ -22,7 +22,7 @@ function showRepositories() {
   document.getElementById('repositories').innerHTML = repoList;
 }
 
-function getCommits(el) {
+function displayCommits(el) {
   const username = el.dataset.username;
   const name = el.dataset.repository;
   const req = new XMLHttpRequest();
@@ -42,6 +42,6 @@ function showCommits() {
         commit.commit.message +
         '</li>'
     )
-    .join('')}</ul>`;
+    .join('')}</l>`;
   document.getElementById('commits').innerHTML = commitsList;
 }
