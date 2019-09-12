@@ -45,4 +45,3 @@ function showCommits() {
     .join('')}</ul>`;
   document.getElementById('commits').innerHTML = commitsList;
 }
-
