@@ -22,7 +22,7 @@ function showRepositories() {
   document.getElementById('repositories').innerHTML = repoList;
 }
 
-function displayCommits(el) {
+function getCommits(el) {
   const username = el.dataset.username;
   const name = el.dataset.repository;
   const req = new XMLHttpRequest();
