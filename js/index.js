@@ -22,11 +22,11 @@ function showRepositories() {
   document.getElementById('repositories').innerHTML = repoList;
 }
 
-function getCommits(repo) {
-  const owner = repo.dataset.username;
-  const name = repo.dataset.repository;
+function getCommits(el) {
+  const username = el.dataset.username;
+  const name = el.dataset.repository;
   const req = new XMLHttpRequest();
   req.addEventListener('load', displayCommits);
-  req.open('GET', 'https://api.github.com/repos/' + owner + '/' + name + '/commits');
+  req.open('GET', `https://api.github.com/repos/${username}/${name}/commits`);
   req.send();
 }
