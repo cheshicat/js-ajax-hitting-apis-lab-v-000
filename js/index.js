@@ -1,10 +1,3 @@
-function getRepositories() {
-  let username = document.getElementById('username').value;
-  const req = new XMLHttpRequest();
-  req.open('GET', `https://api.github.com/users/${username}/repos`);
-  req.send();
-}
-
 function showRepositories() {
   const repos = JSON.parse(this.responseText);
   console.log(repos);
@@ -19,4 +12,11 @@ function showRepositories() {
     )
     .join('')}</ul>`;
   document.getElementById('repositories').innerHTML = repoList;
+}
+
+function getRepositories() {
+  let username = document.getElementById('username').value;
+  const req = new XMLHttpRequest();
+  req.open('GET', `https://api.github.com/users/${username}/repos`);
+  req.send();
 }
